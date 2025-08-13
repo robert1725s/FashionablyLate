@@ -1,0 +1,37 @@
+/* body共通 */
+body {
+    font-family: "linka", sans-serif;
+    color: #8b7969;
+    font-weight: 400;
+    font-size: 20px;
+    background-color: #fff;
+}
+
+/* ヘッダー */
+.header {
+    height: 100px;
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #e0dfde;
+}
+
+.header__title {
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+/* コンテナ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ページタイトル */
+.page-title {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}

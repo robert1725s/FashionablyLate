@@ -1,0 +1,214 @@
+/* フォーム */
+.contact__form {
+    max-width: 972px;
+    margin: 0 auto;
+}
+
+.contact__item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    gap: 32px;
+}
+
+.contact__label {
+    min-width: 340px;
+    font-size: 20px;
+    padding-top: 12px;
+    position: relative;
+}
+
+.contact__label.contact--required::after {
+    content: "※";
+    color: #ff9494;
+    margin-left: 5px;
+}
+
+.contact__input,
+.contact__select,
+.contact__textarea {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    font-size: 14px;
+    background-color: #f4f4f4;
+}
+
+.contact__input:focus,
+.contact__select:focus,
+.contact__textarea:focus {
+    outline: none;
+}
+
+.contact__input::placeholder,
+.contact__textarea::placeholder {
+    color: #beb1a6;
+}
+
+/* 名前フィールド */
+.contact__name-group {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+}
+
+.contact__name-group .contact__input {
+    flex: 1;
+}
+
+/* 性別ラジオボタン */
+.contact__radio-group {
+    display: flex;
+    gap: 52px;
+    flex: 1;
+    align-items: center;
+    align-content: center;
+}
+
+.contact__radio-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: #8b7969;
+}
+
+.contact__radio-item input[type="radio"] {
+    display: none;
+}
+
+.contact__radio-custom {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #8b7969;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.contact__radio-item input[type="radio"]:checked + .contact__radio-custom {
+    border-color: #8b7969;
+}
+
+.contact__radio-item
+    input[type="radio"]:checked
+    + .contact__radio-custom::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px; /* 丸の内側の塗りつぶし */
+    height: 20px;
+    background: #8b7969; /* 塗りつぶす色 */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 電話番号フィールド */
+.contact__tel-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.contact__tel {
+    width: 80px;
+    text-align: center;
+}
+
+/* セレクトボックス */
+.contact__select-wrapper {
+    width: 330px;
+    position: relative;
+}
+
+.contact__select-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #beb1a6;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.contact__select {
+    width: 100%;
+    padding: 12px 40px 12px 16px;
+    font-size: 14px;
+    color: #beb1a6;
+    appearance: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* テキストエリア */
+.contact__textarea {
+    min-height: 129px;
+    resize: none;
+}
+
+/* 送信ボタン */
+.contact__submit {
+    text-align: center;
+    margin-bottom: 33px;
+}
+
+.contact__submit-btn {
+    background-color: #82756a;
+    color: #fff;
+    border: none;
+    padding: 10px 40px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.contact__submit-btn:hover {
+    background-color: #6d5940;
+    transform: translateY(-1px);
+}
+
+.contact__submit-btn:active {
+    transform: translateY(0);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .contact__item {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact__label {
+        min-width: auto;
+        padding-top: 0;
+    }
+
+    .contact__name-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .contact__radio-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .contact__tel-group {
+        justify-content: center;
+    }
+
+    .contactform__submit-btn {
+        font-size: 14px;
+    }
+}

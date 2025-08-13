@@ -1,0 +1,110 @@
+.confirm__content {
+    margin-bottom: 50px;
+}
+
+.confirm__row {
+    display: flex;
+    min-height: 70px;
+    border-top: 1px solid #e0dfde;
+    border-right: 1px solid #e0dfde;
+}
+
+.confirm__row:last-child {
+    border-bottom: 1px solid #e0dfde;
+}
+
+.confirm__row--detail {
+    min-height: 120px;
+}
+
+.confirm__label {
+    background-color: #baa899;
+    color: #fff;
+    padding: 20px 0 20px 60px;
+    width: 305px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.confirm__value {
+    padding: 20px 20px 20px 45px;
+    display: flex;
+    align-items: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.confirm__value--detail {
+    padding: 20px 20px 20px 45px;
+}
+
+.confirm__btns {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+.confirm__btn {
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.confirm__btn--submit {
+    background-color: #82756a;
+    min-width: 120px;
+    padding: 15px 40px;
+    color: #fff;
+}
+
+.confirm__btn--submit:hover {
+    background-color: #6d5940;
+}
+
+.confirm__btn--edit {
+    color: #8b7969;
+    outline: none;
+    background: none;
+    padding: 0;
+    display: inline;
+    text-decoration: underline;
+}
+
+.confirm__btn--edit:hover {
+    color: #6d5940;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .confirm {
+        padding: 10px;
+    }
+
+    .confirm__row {
+        flex-direction: column;
+        min-height: auto;
+        border: none;
+    }
+
+    .confirm__label {
+        width: 100%;
+        padding: 20px 0 20px 45px;
+    }
+
+    .confirm__value {
+        border-right: 1px solid #e0dfde;
+        border-left: 1px solid #e0dfde;
+    }
+
+    .confirm__actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .confirm__btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
