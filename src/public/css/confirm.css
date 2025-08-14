@@ -1,5 +1,5 @@
-.confirm__content {
-    margin-bottom: 50px;
+.confirm__form {
+    margin-bottom: 40px;
 }
 
 .confirm__row {
@@ -7,9 +7,10 @@
     min-height: 70px;
     border-top: 1px solid #e0dfde;
     border-right: 1px solid #e0dfde;
+    justify-content: flex-start;
 }
 
-.confirm__row:last-child {
+.confirm__row:nth-last-child(2) {
     border-bottom: 1px solid #e0dfde;
 }
 
@@ -29,21 +30,30 @@
 
 .confirm__value {
     padding: 20px 20px 20px 45px;
-    display: flex;
-    align-items: center;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    outline: none;
+    border: none;
+    color: #8b7969;
+    font-size: 20px;
 }
 
-.confirm__value--detail {
-    padding: 20px 20px 20px 45px;
+.confirm__value-name {
+}
+
+.confirm__value--last-name {
+    padding: 20px 0 20px 45px;
+    background-color: #6d5940;
+    width: fit-content; /* 文字 + padding分の幅にする */
+    display: inline-block; /* ブロック幅を内容に合わせる */
 }
 
 .confirm__btns {
     display: flex;
+    align-items: center;
     justify-content: center;
     gap: 50px;
-    margin-bottom: 40px;
+    margin-top: 50px;
 }
 
 .confirm__btn {
@@ -65,11 +75,6 @@
 
 .confirm__btn--edit {
     color: #8b7969;
-    outline: none;
-    background: none;
-    padding: 0;
-    display: inline;
-    text-decoration: underline;
 }
 
 .confirm__btn--edit:hover {
