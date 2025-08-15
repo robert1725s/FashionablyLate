@@ -1,0 +1,96 @@
+.register-btn {
+    background-color: rgba(240, 240, 240, 0.6);
+    color: #d9c6b5;
+    text-decoration: none;
+    padding: 8px 20px;
+    font-size: 14px;
+    border: 1px solid #d9c6b5;
+    position: absolute;
+    right: 100px;
+    width: 100px;
+}
+
+.register-btn:hover {
+    background-color: #82756a;
+    color: #f9f9f9;
+}
+
+.error-message {
+    color: #ff9494;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+body {
+    background-color: #f1ece7;
+}
+
+/* Form */
+.login__form {
+    background-color: #fff;
+    padding: 77px 0 62px;
+    border: 1px solid #c5b9b0;
+    border-radius: 8px;
+    max-width: 736px;
+    margin: 0 auto 0;
+}
+
+.login__form-group {
+    margin: 0 auto 45px;
+    max-width: 445px;
+}
+
+.login__label {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 14px;
+}
+
+.login__input {
+    width: 100%;
+    padding: 19px 27px;
+    font-size: 14px;
+    border: none;
+    background-color: #f4f4f4;
+}
+
+.login__input:focus {
+    outline: none;
+}
+
+.login__input::placeholder {
+    color: #beb1a6;
+}
+
+/* Submit Button */
+.login__submit {
+    text-align: center;
+}
+
+.login__btn {
+    background-color: #8b7355;
+    color: white;
+    border: none;
+    padding: 10px 40px;
+    cursor: pointer;
+}
+
+.login__btn:hover {
+    background-color: #7a6349;
+}
+
+.login__btn:active {
+    background-color: #6b5540;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login__form {
+        margin: 0 15px;
+    }
+
+    .login__heading {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+}

@@ -1,0 +1,333 @@
+.logout-btn {
+    background-color: rgba(240, 240, 240, 0.6);
+    color: #d9c6b5;
+    text-decoration: none;
+    padding: 8px 20px;
+    font-size: 14px;
+    border: 1px solid #d9c6b5;
+    position: absolute;
+    right: 100px;
+    width: 100px;
+}
+
+.logout-btn:hover {
+    background-color: #82756a;
+    color: #f9f9f9;
+}
+
+.admin__container {
+    max-width: 1180px;
+}
+
+/* Search Section */
+.admin__search {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 37px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.admin__search-input {
+    flex: 1;
+    padding: 11px 14px;
+    border: 1px solid #e3ded9;
+    font-size: 16px;
+    background-color: #fbfbfb;
+    color: #beb1a6;
+    outline: none;
+}
+
+.admin__search-select {
+    padding: 12px 30px 12px 16px;
+    border: 1px solid #e3ded9;
+    background-color: #f4f4f4;
+    font-size: 17px;
+    cursor: pointer;
+    color: #8b7969;
+    appearance: none;
+    outline: none;
+}
+
+.admin__search--icon {
+    position: relative;
+}
+
+.admin__search--icon::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 20px solid #e0dfde;
+    pointer-events: none;
+}
+
+.admin__search-select--gender {
+    min-width: 102px;
+}
+
+/* Date Input */
+.admin__date-input {
+    padding: 12px 16px;
+    border: 1px solid #e3ded9;
+    background-color: #f4f4f4;
+    font-size: 17px;
+    min-width: 140px;
+    cursor: pointer;
+    color: #8b7969;
+    appearance: none;
+    outline: none;
+}
+
+.admin__date-input::-webkit-calendar-picker-indicator {
+    background: transparent;
+}
+
+/* Search Buttons */
+.admin__search-btn {
+    background-color: #82756a;
+    color: #ffffff;
+    border: 1px solid #8b7969;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.admin__search-btn:hover {
+    background-color: #7a6349;
+}
+
+.admin__reset-btn {
+    background-color: #d9c6b5;
+    color: #8b7355;
+    border: none;
+    padding: 13px 12px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.admin__reset-btn:hover {
+    background-color: #c7b59b;
+}
+
+/* Actions */
+.admin__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.admin__export-btn {
+    background-color: rgba(225, 219, 214, 0.6);
+    color: #8b7355;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.admin__export-btn:hover {
+    background-color: #c7b59b;
+}
+
+/* Table */
+.admin__table-wrapper {
+    border: 1px solid #e0dfde;
+    overflow: hidden;
+    margin-bottom: 48px;
+}
+
+.admin__table {
+    width: 100%;
+}
+
+.admin__table-head {
+    background-color: #8b7969;
+}
+
+.admin__table-row--header {
+    font-weight: 700;
+    font-size: 20px;
+    padding: 18px 0 15px;
+}
+
+.admin__table-header {
+    padding: 15px 0;
+    text-align: left;
+    color: #ffffff;
+}
+
+.admin__table-header:first-child,
+.admin__table-cell:first-child {
+    padding-left: 55px;
+    max-width: 150px;
+}
+
+.admin__table-row {
+    border-bottom: 1px solid #eee;
+}
+
+.admin__table-row:last-child {
+    border-bottom: none;
+}
+
+.admin__table-cell {
+    padding: 25px 0;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.admin__detail-btn {
+    background-color: rgba(244, 244, 244, 0.3);
+    color: #d9c6b5;
+    border: 1px solid rgba(217, 198, 181, 0.6);
+    padding: 8px 20px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.admin__detail-btn:hover {
+    background-color: #c7b59b;
+    color: #f9f9f9;
+}
+
+/* Laravel Default Pagination Styling */
+nav[aria-label="Pagination Navigation"] {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+nav[aria-label="Pagination Navigation"] span,
+nav[aria-label="Pagination Navigation"] a {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    color: #666;
+    transition: all 0.3s ease;
+    min-width: 36px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav[aria-label="Pagination Navigation"] a:hover {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+}
+
+nav[aria-label="Pagination Navigation"] span[aria-current="page"] {
+    background-color: #8b7355;
+    color: #ffffff;
+    border-color: #8b7355;
+    font-weight: 500;
+}
+
+nav[aria-label="Pagination Navigation"] span[aria-disabled="true"] {
+    background-color: #f8f8f8;
+    color: #ccc;
+    cursor: not-allowed;
+    border-color: #eee;
+}
+
+nav[aria-label="Pagination Navigation"] .hidden {
+    display: none;
+}
+
+/* ページ番号のテキストを確実に表示 */
+nav[aria-label="Pagination Navigation"] span,
+nav[aria-label="Pagination Navigation"] a {
+    line-height: 1.2;
+}
+
+nav[aria-label="Pagination Navigation"] span *,
+nav[aria-label="Pagination Navigation"] a * {
+    display: inline;
+    visibility: visible;
+}
+
+.admin__pagination-btn--disabled {
+    background-color: #f8f8f8;
+    color: #ccc;
+    cursor: not-allowed;
+    border-color: #eee;
+}
+
+.admin__pagination-btn--disabled:hover {
+    background-color: #f8f8f8;
+    border-color: #eee;
+}
+
+.admin__pagination-btn:not(.admin__pagination-btn--active):not(
+        .admin__pagination-btn--disabled
+    ) {
+    text-decoration: none;
+    color: #666;
+}
+
+.admin__pagination-btn:not(.admin__pagination-btn--active):not(
+        .admin__pagination-btn--disabled
+    ):hover {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .admin__header {
+        padding: 15px 20px;
+    }
+
+    .admin__title {
+        font-size: 24px;
+    }
+
+    .admin__main {
+        padding: 20px;
+    }
+
+    .admin__page-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .admin__search {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .admin__search-input,
+    .admin__search-select,
+    .admin__date-input {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .admin__actions {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+
+    .admin__pagination {
+        justify-content: center;
+    }
+
+    .admin__table-wrapper {
+        overflow-x: auto;
+    }
+
+    .admin__table {
+        min-width: 600px;
+    }
+}

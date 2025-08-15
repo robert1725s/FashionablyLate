@@ -13,18 +13,23 @@ body {
     text-align: center;
     background-color: #fff;
     border-bottom: 1px solid #e0dfde;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .header__title {
     font-size: 40px;
-    letter-spacing: 2px;
+    font-weight: 400;
+    margin-top: 0;
+    padding-top: 10px;
 }
 
 /* コンテナ */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
 /* ページタイトル */

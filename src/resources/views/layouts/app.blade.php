@@ -14,6 +14,7 @@
 <body>
     <header class="header">
         <h1 class="header__title">FashionablyLate</h1>
+        @yield('button')
     </header>
     <main>
         <div class="container">
