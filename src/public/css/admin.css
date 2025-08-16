@@ -1,3 +1,9 @@
+/* ログアウトボタン */
+.logout-form {
+    position: absolute;
+    right: 100px;
+}
+
 .logout-btn {
     background-color: rgba(240, 240, 240, 0.6);
     color: #d9c6b5;
@@ -5,9 +11,8 @@
     padding: 8px 20px;
     font-size: 14px;
     border: 1px solid #d9c6b5;
-    position: absolute;
-    right: 100px;
     width: 100px;
+    cursor: pointer;
 }
 
 .logout-btn:hover {
@@ -15,27 +20,39 @@
     color: #f9f9f9;
 }
 
+/* 全体調整用 */
 .admin__container {
-    max-width: 1180px;
+    max-width: 1280px;
+    padding: 0 10px;
 }
 
-/* Search Section */
+/* 検索条件設定パーツ */
 .admin__search {
     display: flex;
     gap: 30px;
-    margin-bottom: 37px;
     flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 37px;
+    flex: 1;
+}
+
+.admin__search-list {
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    margin-bottom: 37px;
     align-items: center;
 }
 
 .admin__search-input {
     flex: 1;
-    padding: 11px 14px;
+    padding: 12px 14px;
     border: 1px solid #e3ded9;
     font-size: 16px;
     background-color: #fbfbfb;
     color: #beb1a6;
     outline: none;
+    min-width: 300px;
 }
 
 .admin__search-select {
@@ -71,7 +88,6 @@
     min-width: 102px;
 }
 
-/* Date Input */
 .admin__date-input {
     padding: 12px 16px;
     border: 1px solid #e3ded9;
@@ -88,7 +104,7 @@
     background: transparent;
 }
 
-/* Search Buttons */
+/* 検索用ボタン */
 .admin__search-btn {
     background-color: #82756a;
     color: #ffffff;
@@ -102,25 +118,28 @@
     background-color: #7a6349;
 }
 
+/* 検索条件リセット用ボタン */
+
 .admin__reset-btn {
     background-color: #d9c6b5;
-    color: #8b7355;
+    color: #fff;
     border: none;
     padding: 13px 12px;
     cursor: pointer;
     font-size: 18px;
+    text-decoration: none;
 }
 
 .admin__reset-btn:hover {
     background-color: #c7b59b;
 }
 
-/* Actions */
+/* エクスポート、ページネーション */
 .admin__actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 23px;
 }
 
 .admin__export-btn {
@@ -136,7 +155,7 @@
     background-color: #c7b59b;
 }
 
-/* Table */
+/* データ表示用テーブル */
 .admin__table-wrapper {
     border: 1px solid #e0dfde;
     overflow: hidden;
@@ -153,7 +172,6 @@
 
 .admin__table-row--header {
     font-weight: 700;
-    font-size: 20px;
     padding: 18px 0 15px;
 }
 
@@ -161,6 +179,7 @@
     padding: 15px 0;
     text-align: left;
     color: #ffffff;
+    min-width: 120px;
 }
 
 .admin__table-header:first-child,
@@ -179,8 +198,8 @@
 
 .admin__table-cell {
     padding: 25px 0;
-    font-size: 20px;
     vertical-align: middle;
+    min-width: 120px;
 }
 
 .admin__detail-btn {
@@ -188,8 +207,9 @@
     color: #d9c6b5;
     border: 1px solid rgba(217, 198, 181, 0.6);
     padding: 8px 20px;
-    cursor: pointer;
     font-size: 18px;
+    text-decoration: none;
+    margin-left: 15px;
 }
 
 .admin__detail-btn:hover {
@@ -197,95 +217,222 @@
     color: #f9f9f9;
 }
 
-/* Laravel Default Pagination Styling */
-nav[aria-label="Pagination Navigation"] {
+/* モーダルデザイン */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-nav[aria-label="Pagination Navigation"] span,
-nav[aria-label="Pagination Navigation"] a {
-    background: none;
-    border: 1px solid #ddd;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-size: 14px;
-    border-radius: 4px;
-    color: #666;
-    transition: all 0.3s ease;
-    min-width: 36px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
 }
 
-nav[aria-label="Pagination Navigation"] a:hover {
-    background-color: #f0f0f0;
-    border-color: #ccc;
-}
-
-nav[aria-label="Pagination Navigation"] span[aria-current="page"] {
-    background-color: #8b7355;
-    color: #ffffff;
-    border-color: #8b7355;
-    font-weight: 500;
-}
-
-nav[aria-label="Pagination Navigation"] span[aria-disabled="true"] {
-    background-color: #f8f8f8;
-    color: #ccc;
-    cursor: not-allowed;
-    border-color: #eee;
-}
-
-nav[aria-label="Pagination Navigation"] .hidden {
-    display: none;
-}
-
-/* ページ番号のテキストを確実に表示 */
-nav[aria-label="Pagination Navigation"] span,
-nav[aria-label="Pagination Navigation"] a {
-    line-height: 1.2;
-}
-
-nav[aria-label="Pagination Navigation"] span *,
-nav[aria-label="Pagination Navigation"] a * {
-    display: inline;
+.modal:target {
+    opacity: 1;
     visibility: visible;
 }
 
-.admin__pagination-btn--disabled {
-    background-color: #f8f8f8;
-    color: #ccc;
-    cursor: not-allowed;
-    border-color: #eee;
+.modal__content {
+    background: white;
+    border-radius: 8px;
+    padding: 100px 80px 80px;
+    max-width: 805px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
 }
 
-.admin__pagination-btn--disabled:hover {
-    background-color: #f8f8f8;
-    border-color: #eee;
+.modal:target .modal__content {
+    transform: scale(1);
 }
 
-.admin__pagination-btn:not(.admin__pagination-btn--active):not(
-        .admin__pagination-btn--disabled
-    ) {
+.modal__close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    color: #999;
     text-decoration: none;
-    color: #666;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 28px;
+    line-height: 34px;
+    border-radius: 50%;
+    background-color: white;
 }
 
-.admin__pagination-btn:not(.admin__pagination-btn--active):not(
-        .admin__pagination-btn--disabled
-    ):hover {
-    background-color: #f0f0f0;
-    border-color: #ccc;
+.modal__close:hover {
+    color: #333;
+    border-color: #999;
+    background-color: #f9f9f9;
 }
-/* Responsive */
+
+.modal__form {
+    margin-top: 20px;
+}
+
+.modal__form-row {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+
+.modal__form-label {
+    width: 180px;
+    font-weight: 700;
+    color: #8b7969;
+    font-size: 20px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.modal__form-value {
+    flex: 1;
+    color: #8b7969;
+    font-size: 20px;
+    line-height: 1.5;
+    max-width: 500px;
+}
+
+/* 削除用ボタン */
+.delete-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.delete-btn {
+    padding: 8px 20px;
+    background-color: #ba370d;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* レスポンシブ用カードデザイン */
+.card-container {
+    display: none;
+    padding: 0 10px;
+    margin-bottom: 15px;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    padding: 20px;
+    position: relative;
+}
+
+.card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #8b7969;
+    padding-bottom: 15px;
+}
+
+.card__name {
+    font-size: 18px;
+    color: #8b7969;
+}
+
+.card__gender {
+    background-color: #f0f0f0;
+    color: #666;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.card__body {
+    display: grid;
+    gap: 10px;
+}
+
+.card__field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__label {
+    font-weight: bold;
+    color: #8b7969;
+    font-size: 14px;
+    min-width: 120px;
+}
+
+.card__value {
+    flex: 1;
+    text-align: right;
+    font-size: 14px;
+    word-break: break-all;
+    color: #8b7969;
+}
+
+.card__footer {
+    margin-top: 15px;
+    text-align: right;
+    border-top: 1px solid #8b7969;
+    padding-top: 15px;
+}
+
+/* ページネーション表示切替 */
+.admin__pagination--mobile {
+    display: none;
+}
+
+.admin__pagination--web {
+    display: block;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 1024px) {
+    .admin__table-header:first-child,
+    .admin__table-cell:first-child {
+        padding-left: 25px;
+        max-width: 120px;
+    }
+    .admin__table-row {
+        font-size: 15px;
+    }
+}
+
 @media (max-width: 768px) {
+    .logout-form {
+        position: static;
+    }
+
     .admin__header {
         padding: 15px 20px;
+    }
+
+    .admin__pagination--mobile {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .admin__pagination--web {
+        display: none;
     }
 
     .admin__title {
@@ -302,21 +449,32 @@ nav[aria-label="Pagination Navigation"] a * {
     }
 
     .admin__search {
-        flex-direction: column;
         gap: 15px;
+        justify-content: center;
     }
 
     .admin__search-input,
     .admin__search-select,
     .admin__date-input {
         width: 100%;
-        min-width: auto;
     }
 
     .admin__actions {
         flex-direction: column;
         gap: 15px;
         align-items: stretch;
+    }
+
+    .admin__search-btn {
+        font-size: 15px;
+    }
+
+    .admin__reset-btn {
+        font-size: 15px;
+    }
+
+    .admin__detail-btn {
+        font-size: 15px;
     }
 
     .admin__pagination {
@@ -329,5 +487,45 @@ nav[aria-label="Pagination Navigation"] a * {
 
     .admin__table {
         min-width: 600px;
+    }
+
+    .admin__table-wrapper {
+        display: none;
+    }
+
+    .modal__form-label {
+        font-size: 18px;
+    }
+
+    .modal__form-value {
+        font-size: 18px;
+    }
+
+    .modal__form-row {
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    .card-container {
+        display: block;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card__header {
+        gap: 10px;
+    }
+
+    .card__field {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .card__value {
+        text-align: left;
+        margin-left: 10px;
     }
 }

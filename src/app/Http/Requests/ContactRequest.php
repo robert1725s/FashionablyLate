@@ -62,13 +62,14 @@ class ContactRequest extends FormRequest
             $requiredError = false;
             $digitsError = false;
 
+
             foreach ($telFields as $field) {
                 if ($validator->errors()->has($field)) {
                     foreach ($validator->errors()->get($field) as $message) {
-                        if (str_contains($message, 'between')) {
+                        if (str_contains($message, '桁')) {
                             $digitsError = true;
                         }
-                        if (str_contains($message, 'require')) {
+                        if (str_contains($message, '必ず')) {
                             $requiredError = true;
                         }
                     }

@@ -1,15 +1,20 @@
+/* Googleフォントからインポート */
+@import url("https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap");
+
 /* body共通 */
 body {
-    font-family: "linka", sans-serif;
-    color: #8b7969;
+    font-family: "Inika", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+        "Yu Gothic Medium", "Meiryo", sans-serif;
     font-weight: 400;
     font-size: 20px;
     background-color: #fff;
+    color: #8b7969;
 }
 
 /* ヘッダー */
 .header {
-    height: 100px;
+    padding: 20px 0;
+    min-height: 100px;
     text-align: center;
     background-color: #fff;
     border-bottom: 1px solid #e0dfde;
@@ -22,8 +27,7 @@ body {
 .header__title {
     font-size: 40px;
     font-weight: 400;
-    margin-top: 0;
-    padding-top: 10px;
+    margin: 0;
 }
 
 /* コンテナ */
@@ -39,4 +43,20 @@ body {
     margin-bottom: 50px;
     font-weight: 400;
     letter-spacing: 1px;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .header-title {
+        font-size: 35px;
+    }
+
+    .page-title {
+        font-size: 30px;
+    }
 }

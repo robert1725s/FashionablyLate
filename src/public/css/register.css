@@ -1,3 +1,9 @@
+/* ログインボタン */
+.login-btn-wrapper {
+    position: absolute;
+    right: 100px;
+}
+
 .login-btn {
     background-color: rgba(240, 240, 240, 0.6);
     color: #d9c6b5;
@@ -5,8 +11,6 @@
     padding: 8px 20px;
     font-size: 14px;
     border: 1px solid #d9c6b5;
-    position: absolute;
-    right: 100px;
     width: 100px;
 }
 
@@ -21,20 +25,18 @@
     margin-top: 5px;
 }
 
-
-
 body {
     background-color: #f1ece7;
 }
 
-/* Form */
+/* フォーム */
 .register__form {
     background-color: #fff;
-    padding: 77px 0 62px;
+    padding: 77px 20px 62px;
     border: 1px solid #c5b9b0;
     border-radius: 8px;
     max-width: 736px;
-    margin: 0 auto 0;
+    margin: 0 auto 74px;
 }
 
 .register__form-group {
@@ -64,17 +66,18 @@ body {
     color: #beb1a6;
 }
 
-/* Submit Button */
+/* 登録ボタン */
 .register__submit {
     text-align: center;
 }
 
 .register__btn {
-    background-color: #8b7355;
+    background-color: #82756a;
     color: white;
     border: none;
     padding: 10px 40px;
     cursor: pointer;
+    font-size: 20px;
 }
 
 .register__btn:hover {
@@ -85,14 +88,19 @@ body {
     background-color: #6b5540;
 }
 
-/* Responsive Design */
+/* レスポンシブデザイン */
 @media (max-width: 768px) {
+    .login-btn-wrapper {
+        position: static;
+    }
     .register__form {
-        margin: 0 15px;
+        margin: 0 15px 40px;
+    }
+    .register__label {
+        font-size: 20px;
     }
 
-    .register__heading {
-        font-size: 24px;
-        margin-bottom: 30px;
+    .register__btn {
+        font-size: 15px;
     }
 }

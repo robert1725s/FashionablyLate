@@ -1,5 +1,10 @@
+.confirm-wrapper {
+    padding: 0 20px;
+}
+
 .confirm__form {
-    margin-bottom: 40px;
+    max-width: 972px;
+    margin: 0 auto 40px;
 }
 
 .confirm__row {
@@ -15,7 +20,7 @@
 }
 
 .confirm__row--detail {
-    min-height: 120px;
+    min-height: 150px;
 }
 
 .confirm__label {
@@ -36,16 +41,8 @@
     border: none;
     color: #8b7969;
     font-size: 20px;
-}
-
-.confirm__value-name {
-}
-
-.confirm__value--last-name {
-    padding: 20px 0 20px 45px;
-    background-color: #6d5940;
-    width: fit-content; /* 文字 + padding分の幅にする */
-    display: inline-block; /* ブロック幅を内容に合わせる */
+    width: 100%;
+    resize: none;
 }
 
 .confirm__btns {
@@ -65,7 +62,7 @@
 .confirm__btn--submit {
     background-color: #82756a;
     min-width: 120px;
-    padding: 15px 40px;
+    padding: 10px 40px;
     color: #fff;
 }
 
@@ -81,7 +78,7 @@
     color: #6d5940;
 }
 
-/* レスポンシブ対応 */
+/* レスポンシブデザイン */
 @media (max-width: 768px) {
     .confirm {
         padding: 10px;
@@ -89,27 +86,27 @@
 
     .confirm__row {
         flex-direction: column;
-        min-height: auto;
         border: none;
     }
 
     .confirm__label {
         width: 100%;
         padding: 20px 0 20px 45px;
+        font-size: 18px;
     }
 
     .confirm__value {
         border-right: 1px solid #e0dfde;
         border-left: 1px solid #e0dfde;
+        font-size: 18px;
+    }
+
+    .confirm__row--detail .confirm__value {
+        min-height: 150px;
     }
 
     .confirm__actions {
         flex-direction: column;
         align-items: center;
-    }
-
-    .confirm__btn {
-        width: 100%;
-        max-width: 200px;
     }
 }

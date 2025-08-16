@@ -55,6 +55,6 @@ class ContactController extends Controller
         ]);
         Contact::create($contact);
         session()->forget('contact_data');
-        return view('thanks');
+        return redirect('/thanks');
     }
 }

@@ -16,8 +16,15 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get('/', [ContactController::class, 'contact']);
-Route::post('/confirm', [ContactController::class, 'confirm']);
-Route::post('/thanks', [ContactController::class, 'store']);
-Route::get('/register', [AdminController::class, 'register']);
-Route::get('/login', [AdminController::class, 'login']);
-Route::get('/admin', [AdminController::class, 'admin']);
+Route::post('/contact/confirm', [ContactController::class, 'confirm']);
+Route::post('/contact/complete', [ContactController::class, 'store']);
+Route::get('/thanks', function () {
+    return view('thanks');
+});
+Route::middleware('auth')->group(function () {
+    Route::get('/admin', [AdminController::class, 'admin']);
+});
+Route::post('/admin/search', [AdminController::class, 'search']);
+Route::get('/admin/reset', [AdminController::class, 'reset']);
+Route::post('/admin/delete', [AdminController::class, 'destroy']);
+Route::post('/admin/export', [AdminController::class, 'export']);
