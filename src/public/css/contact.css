@@ -1,7 +1,7 @@
 /* フォーム */
 .contact__form {
-    max-width: 972px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .error-message {
@@ -12,7 +12,8 @@
 
 .contact__item {
     display: flex;
-    align-items: center;
+    max-width: 972px;
+    align-items: flex-start;
     margin-bottom: 32px;
 }
 
@@ -23,7 +24,6 @@
 .contact__label {
     min-width: 340px;
     font-size: 20px;
-    position: relative;
 }
 
 .contact__label.contact--required::after {
@@ -35,7 +35,6 @@
 .contact__input,
 .contact__select,
 .contact__textarea {
-    flex: 1;
     padding: 12px 16px;
     border: none;
     font-size: 14px;
@@ -69,8 +68,7 @@
 .contact__radio-group {
     display: flex;
     gap: 52px;
-    flex: 1;
-    align-items: center;
+    align-items: flex-start;
     align-content: center;
     padding-left: 20px;
 }
@@ -80,6 +78,7 @@
     align-items: center;
     cursor: pointer;
     font-size: 18px;
+    line-height: 30px;
     color: #8b7969;
 }
 
@@ -109,9 +108,9 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 20px; /* 丸の内側の塗りつぶし */
+    width: 20px;
     height: 20px;
-    background: #8b7969; /* 塗りつぶす色 */
+    background: #8b7969;
     border-radius: 50%;
     transform: translate(-50%, -50%);
 }
@@ -121,7 +120,6 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    flex: 1;
 }
 
 .contact__tel {
@@ -147,7 +145,6 @@
     border-right: 15px solid transparent;
     border-top: 15px solid #beb1a6;
     pointer-events: none;
-    transition: transform 0.3s ease;
 }
 
 .contact__select {
@@ -156,18 +153,15 @@
     font-size: 14px;
     appearance: none;
     cursor: pointer;
-}
-
-.contact__select:invalid {
     color: #beb1a6;
 }
 
-.contact__select option:first-child {
-    color: #beb1a6;
+.contact__select:valid {
+    color: #333;
 }
 
-.contact__select option {
-    color: black;
+.contact__select option[value=""] {
+    color: #beb1a6;
 }
 
 /* テキストエリア */
@@ -196,42 +190,29 @@
     transform: translateY(-1px);
 }
 
-.contact__submit-btn:active {
-    transform: translateY(0);
-}
-
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
+    .contact__form {
+        padding: 0 15px;
+    }
+
     .contact__item {
         flex-direction: column;
         gap: 10px;
     }
 
-    .contact__label {
-        min-width: auto;
-        padding-top: 0;
-    }
-
     .contact__name-group {
-        flex-direction: column;
-        gap: 15px;
+        width: 100%;
+        gap: 10px;
     }
 
     .contact__radio-group {
-        flex-direction: column;
         align-items: center;
         gap: 15px;
+        padding-left: 0;
     }
 
     .contact__tel-group {
         justify-content: center;
-    }
-
-    .contactform__submit-btn {
-        font-size: 14px;
-    }
-
-    .error-message {
-        text-align: center;
     }
 }

@@ -92,7 +92,11 @@ class AdminController extends Controller
                 'お名前',
                 '性別',
                 'メールアドレス',
-                'お問い合わせの種類'
+                '電話番号',
+                '住所',
+                '建物名',
+                'お問い合わせの種類',
+                'お問い合わせ内容'
             ]);
 
             // データ行を書き込み
@@ -112,10 +116,14 @@ class AdminController extends Controller
                 }
 
                 fputcsv($file, [
-                    $contact->last_name . '　' . $contact->first_name,
+                    $contact->last_name . ' ' . $contact->first_name,
                     $gender,
                     $contact->email,
-                    $contact->category->content ?? ''
+                    $contact->tel,
+                    $contact->address,
+                    $contact->building,
+                    $contact->category->content ?? '',
+                    $contact->detail,
                 ]);
             }
 

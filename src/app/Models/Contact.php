@@ -22,8 +22,10 @@ class Contact extends Model
     public function scopeKeywordSearch($query, $keyword)
     {
         if (!empty($keyword)) {
+            $keyword = str_replace([' ', '　'], '', $keyword);
+            //dd($keyword);
             $query->where(function ($q) use ($keyword) {
-                $q->where(DB::raw("CONCAT(first_name, ' ', last_name)"), 'like', '%' . $keyword . '%')
+                $q->where(DB::raw("CONCAT(last_name, first_name)"), 'like', '%' . $keyword . '%')
                     ->orWhere('email', 'like', '%' . $keyword . '%');
             });
         }

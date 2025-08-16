@@ -1,8 +1,7 @@
-{{-- resources/views/custom/pagination.blade.php --}}
 @if ($paginator->hasPages())
     <nav aria-label="ページネーション" class="pagination-wrapper">
         <ul class="custom-pagination">
-            {{-- Previous Page Link --}}
+            <!-- 前へボタン -->
             @if ($paginator->onFirstPage())
                 <li class="page-item disabled">
                     <span class="page-link prev">&lt;</span>
@@ -13,7 +12,7 @@
                 </li>
             @endif
 
-            {{-- Page Numbers --}}
+            <!-- ページ番号ボタン -->
             @foreach ($elements as $element)
                 @if (is_array($element))
                     @foreach ($element as $page => $url)
@@ -30,7 +29,7 @@
                 @endif
             @endforeach
 
-            {{-- Next Page Link --}}
+            <!-- 次へボタン -->
             @if ($paginator->hasMorePages())
                 <li class="page-item">
                     <a class="page-link next" href="{{ $paginator->nextPageUrl() }}" rel="next">&gt;</a>
@@ -52,7 +51,7 @@
             padding: 0;
             margin: 0;
             border-radius: 8px;
-            max-width: 400px;
+            max-width: 500px;
             margin: 0 auto;
         }
 
@@ -60,10 +59,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 32px;
+            height: 32px;
             text-decoration: none;
-            transition: all 0.2s ease;
             border: none;
             font-size: 16px;
             line-height: 1;

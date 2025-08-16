@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-    <form class="contact__form" action="/confirm" method="post">
+    <form class="contact__form" action="/contact/confirm" method="post">
         @csrf
         <!-- お名前 -->
         <div class="contact__item">
@@ -33,7 +33,7 @@
 
         <!-- 性別 -->
         <div class="contact__item">
-            <label class="contact__label contact--required">性別</label>
+            <label class="contact__label contact--required test">性別</label>
             <div class="contact__value-wrapper">
                 <div class="contact__radio-group">
                     <label class="contact__radio-item">
@@ -62,7 +62,7 @@
         <div class="contact__item">
             <label class="contact__label contact--required">メールアドレス</label>
             <div class="contact__value-wrapper">
-                <input type="email" name="email" class="contact__input" placeholder="例：test@example.com"
+                <input name="email" class="contact__input" placeholder="例：test@example.com"
                     value="{{ old('email', $contactData['email'] ?? '') }}">
                 @error('email')
                     <p class="error-message">※{{ $message }}</p>
@@ -116,7 +116,7 @@
             <label class="contact__label contact--required">お問い合わせの種類</label>
             <div class="contact__value-wrapper">
                 <div class="contact__select-wrapper">
-                    <select name="category_id" class="contact__select" required>
+                    <select name="category_id" class="contact__select">
                         <option value="">選択してください</option>
                         @foreach ($categories as $category)
                             <option value="{{ $category['id'] }}"
@@ -125,7 +125,7 @@
                         @endforeach
                     </select>
                 </div>
-                @error('category')
+                @error('category_id')
                     <p class="error-message">※{{ $message }}</p>
                 @enderror
             </div>

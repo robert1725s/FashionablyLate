@@ -52,7 +52,7 @@ body {
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
     .thanks__content::after {
-        font-size: 100px;
+        font-size: 130px;
     }
     .thanks__title {
         font-size: 18px;
