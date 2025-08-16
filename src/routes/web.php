@@ -18,6 +18,10 @@ use App\Http\Controllers\AdminController;
 Route::get('/', [ContactController::class, 'contact']);
 Route::post('/confirm', [ContactController::class, 'confirm']);
 Route::post('/thanks', [ContactController::class, 'store']);
-Route::get('/register', [AdminController::class, 'register']);
-Route::get('/login', [AdminController::class, 'login']);
-Route::get('/admin', [AdminController::class, 'admin']);
+Route::middleware('auth')->group(function () {
+    Route::get('/admin', [AdminController::class, 'admin']);
+});
+Route::post('/admin/search', [AdminController::class, 'search']);
+Route::post('/admin/reset', [AdminController::class, 'reset']);
+Route::post('/admin/delete', [AdminController::class, 'destroy']);
+Route::post('/admin/export', [AdminController::class, 'export']);

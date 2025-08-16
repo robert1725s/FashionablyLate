@@ -1,3 +1,10 @@
+.logout-form {
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .logout-btn {
     background-color: rgba(240, 240, 240, 0.6);
     color: #d9c6b5;
@@ -5,9 +12,8 @@
     padding: 8px 20px;
     font-size: 14px;
     border: 1px solid #d9c6b5;
-    position: absolute;
-    right: 100px;
     width: 100px;
+    cursor: pointer;
 }
 
 .logout-btn:hover {
@@ -23,6 +29,15 @@
 .admin__search {
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1;
+}
+
+.admin__search-list {
+    display: flex;
+    width: 100%;
+    gap: 30px;
     margin-bottom: 37px;
     flex-wrap: wrap;
     align-items: center;
@@ -30,7 +45,7 @@
 
 .admin__search-input {
     flex: 1;
-    padding: 11px 14px;
+    padding: 12px 14px;
     border: 1px solid #e3ded9;
     font-size: 16px;
     background-color: #fbfbfb;
@@ -102,9 +117,14 @@
     background-color: #7a6349;
 }
 
+/* Reset Form */
+.admin__reset-form {
+    margin-left: 0;
+}
+
 .admin__reset-btn {
     background-color: #d9c6b5;
-    color: #8b7355;
+    color: #fff;
     border: none;
     padding: 13px 12px;
     cursor: pointer;
@@ -120,7 +140,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 23px;
 }
 
 .admin__export-btn {
@@ -161,6 +181,7 @@
     padding: 15px 0;
     text-align: left;
     color: #ffffff;
+    min-width: 120px;
 }
 
 .admin__table-header:first-child,
@@ -181,6 +202,7 @@
     padding: 25px 0;
     font-size: 20px;
     vertical-align: middle;
+    min-width: 120px;
 }
 
 .admin__detail-btn {
@@ -188,8 +210,8 @@
     color: #d9c6b5;
     border: 1px solid rgba(217, 198, 181, 0.6);
     padding: 8px 20px;
-    cursor: pointer;
     font-size: 18px;
+    text-decoration: none;
 }
 
 .admin__detail-btn:hover {
@@ -197,91 +219,116 @@
     color: #f9f9f9;
 }
 
-/* Laravel Default Pagination Styling */
-nav[aria-label="Pagination Navigation"] {
+/* モーダル */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-nav[aria-label="Pagination Navigation"] span,
-nav[aria-label="Pagination Navigation"] a {
-    background: none;
-    border: 1px solid #ddd;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-size: 14px;
-    border-radius: 4px;
-    color: #666;
-    transition: all 0.3s ease;
-    min-width: 36px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
 }
 
-nav[aria-label="Pagination Navigation"] a:hover {
-    background-color: #f0f0f0;
-    border-color: #ccc;
-}
-
-nav[aria-label="Pagination Navigation"] span[aria-current="page"] {
-    background-color: #8b7355;
-    color: #ffffff;
-    border-color: #8b7355;
-    font-weight: 500;
-}
-
-nav[aria-label="Pagination Navigation"] span[aria-disabled="true"] {
-    background-color: #f8f8f8;
-    color: #ccc;
-    cursor: not-allowed;
-    border-color: #eee;
-}
-
-nav[aria-label="Pagination Navigation"] .hidden {
-    display: none;
-}
-
-/* ページ番号のテキストを確実に表示 */
-nav[aria-label="Pagination Navigation"] span,
-nav[aria-label="Pagination Navigation"] a {
-    line-height: 1.2;
-}
-
-nav[aria-label="Pagination Navigation"] span *,
-nav[aria-label="Pagination Navigation"] a * {
-    display: inline;
+.modal:target {
+    opacity: 1;
     visibility: visible;
 }
 
-.admin__pagination-btn--disabled {
-    background-color: #f8f8f8;
-    color: #ccc;
-    cursor: not-allowed;
-    border-color: #eee;
+.modal-content {
+    background: white;
+    border-radius: 8px;
+    padding: 100px 80px 80px;
+    max-width: 805px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
 }
 
-.admin__pagination-btn--disabled:hover {
-    background-color: #f8f8f8;
-    border-color: #eee;
+.modal:target .modal-content {
+    transform: scale(1);
 }
 
-.admin__pagination-btn:not(.admin__pagination-btn--active):not(
-        .admin__pagination-btn--disabled
-    ) {
+.modal-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    color: #999;
     text-decoration: none;
-    color: #666;
+    text-align: center;
+    border: 1px solid #ddd;
+    line-height: 38px;
+    border-radius: 50%;
+    background-color: white;
 }
 
-.admin__pagination-btn:not(.admin__pagination-btn--active):not(
-        .admin__pagination-btn--disabled
-    ):hover {
-    background-color: #f0f0f0;
-    border-color: #ccc;
+.modal-close:hover {
+    color: #333;
+    border-color: #999;
+    background-color: #f9f9f9;
 }
+
+/* フォーム */
+.modal-form {
+    margin-top: 20px;
+}
+
+.form-row {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+
+.form-label {
+    width: 180px;
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    padding-top: 2px;
+}
+
+.form-value {
+    flex: 1;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 415px;
+}
+
+/* モーダルアクション */
+.delete-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding-top: 20px;
+}
+
+.delete-btn {
+    padding: 8px 20px;
+    background-color: #ba370d;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .admin__header {

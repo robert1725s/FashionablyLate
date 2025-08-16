@@ -12,7 +12,8 @@
 @endsection
 
 @section('content')
-    <form class="register__form" action="/store" method="post">
+    <form class="register__form" action="/register" method="post">
+        @csrf
         <div class="register__form-group">
             <label class="register__label" for="name">お名前</label>
             <input type="text" name="name" class="register__input" placeholder="例: 山田　太郎" value="{{ old('name') }}">
@@ -23,8 +24,7 @@
 
         <div class="register__form-group">
             <label class="register__label" for="email">メールアドレス</label>
-            <input type="email" name="email" class="register__input" placeholder="例: test@example.com"
-                value="{{ old('email') }}">
+            <input name="email" class="register__input" placeholder="例: test@example.com" value="{{ old('email') }}">
             @error('email')
                 <p class="error-message">※{{ $message }}</p>
             @enderror
@@ -32,8 +32,7 @@
 
         <div class="register__form-group">
             <label class="register__label" for="password">パスワード</label>
-            <input type="password" name="password" class="register__input" placeholder="例: coachtech1106"
-                value="{{ old('password') }}">
+            <input type="password" name="password" class="register__input" placeholder="例: coachtech1106">
             @error('password')
                 <p class="error-message">※{{ $message }}</p>
             @enderror
