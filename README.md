@@ -15,7 +15,7 @@
 3. cp .env.example .env
 4. .env ファイルの 11 行目以降を以下に変更
 
-```
+```diff
 // 前略
 
 DB_CONNECTION=mysql
