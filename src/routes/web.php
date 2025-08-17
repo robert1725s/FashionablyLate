@@ -23,8 +23,8 @@ Route::get('/thanks', function () {
 });
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [AdminController::class, 'admin']);
+    Route::post('/admin/search', [AdminController::class, 'search']);
+    Route::get('/admin/reset', [AdminController::class, 'reset']);
+    Route::post('/admin/delete', [AdminController::class, 'destroy']);
+    Route::post('/admin/export', [AdminController::class, 'export']);
 });
-Route::post('/admin/search', [AdminController::class, 'search']);
-Route::get('/admin/reset', [AdminController::class, 'reset']);
-Route::post('/admin/delete', [AdminController::class, 'destroy']);
-Route::post('/admin/export', [AdminController::class, 'export']);
