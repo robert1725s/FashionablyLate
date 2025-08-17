@@ -29,19 +29,11 @@
 /* 検索条件設定パーツ */
 .admin__search {
     display: flex;
-    gap: 30px;
+    gap: 25px;
     flex-wrap: wrap;
     align-items: center;
     margin-bottom: 37px;
     flex: 1;
-}
-
-.admin__search-list {
-    display: flex;
-    width: 100%;
-    gap: 30px;
-    margin-bottom: 37px;
-    align-items: center;
 }
 
 .admin__search-input {

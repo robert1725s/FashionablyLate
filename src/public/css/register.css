@@ -8,8 +8,8 @@
     background-color: rgba(240, 240, 240, 0.6);
     color: #d9c6b5;
     text-decoration: none;
-    padding: 8px 20px;
-    font-size: 14px;
+    padding: 5px 10px;
+    font-size: 20px;
     border: 1px solid #d9c6b5;
     width: 100px;
 }
@@ -92,6 +92,10 @@ body {
 @media (max-width: 768px) {
     .login-btn-wrapper {
         position: static;
+    }
+
+    .login-btn {
+        font-size: 15px;
     }
     .register__form {
         margin: 0 15px 40px;
